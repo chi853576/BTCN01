@@ -5,7 +5,7 @@
             max-width: 1280px;
         }
 
-        header { 
+        header {
             background: linear-gradient(to bottom, #5da8e0, #74b5e8);
             border-radius: 8px;
             padding-top: 8px;
@@ -22,6 +22,7 @@
             color: rgb(177, 225, 234);
             text-shadow: 1px 1px 2px rgb(58, 53, 53);
         }
+
         nav.menu {
             position: absolute;
             bottom: -15px;
@@ -45,13 +46,16 @@
         nav.menu div:hover {
             color: #e67e22;
         }
+        
         nav.menu div.active { 
             color: #e67e22;
         }
+
         main {
             margin-top: 40px;
             text-align: center;
         }
+
         footer {
             background-color: #deb96a;
             color: white;
@@ -81,6 +85,7 @@
             color: white;
             font-weight: bold;
         }
+
         footer nav.menu div.active {
             color: white;
             background-color: #f5923b;

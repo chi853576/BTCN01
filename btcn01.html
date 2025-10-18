@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCN01 22120034</title>
+    <title>Bài tập 1 - 22120034</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header>
@@ -31,9 +33,38 @@
         
         </main>
     </div>
+
+
+
     <footer>
         <p>Copyright © Kimchi</p>
         <nav class="menu" id="menuFooter"></nav>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+            $("#menuFooter").html($("#menuHeader").html());
+
+            function setActive(index) {
+                $("#menuHeader div, #menuFooter div").removeClass("active");
+                $("#menuHeader div").eq(index).addClass("active");
+                $("#menuFooter div").eq(index).addClass("active");
+            }
+
+            $("#menuHeader").on("click", "div", function(){
+                const index = $(this).index();
+                setActive(index);
+            });
+
+            $("#menuFooter").on("click", "div", function(){
+                const index = $(this).index();
+                setActive(index);
+            });
+
+            $("#btn1").click(function(){
+                $("#para1").css("color", "blue");
+            });
+        });
+    </script>
 </body>
 </html>
