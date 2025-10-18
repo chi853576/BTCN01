@@ -22,4 +22,26 @@
             color: rgb(177, 225, 234);
             text-shadow: 1px 1px 2px rgb(58, 53, 53);
         }
-        
+        nav.menu {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #e9f1f9;
+            border-radius: 6px;
+            display: flex;
+            gap: 15px;
+            padding: 6px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav.menu div {
+            color: #0a4d7a;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav.menu div:hover {
+            color: #e67e22;
+        }
