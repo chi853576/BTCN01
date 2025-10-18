@@ -1,0 +1,25 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 1280px;
+        }
+
+        header { 
+            background: linear-gradient(to bottom, #5da8e0, #74b5e8);
+            border-radius: 8px;
+            padding-top: 8px;
+            text-align: center;
+            height: 66px;
+            position: relative;
+            color: #033b6b;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 2px;
+            color: rgb(177, 225, 234);
+            text-shadow: 1px 1px 2px rgb(58, 53, 53);
+        }
+        
