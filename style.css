@@ -45,3 +45,36 @@
         nav.menu div:hover {
             color: #e67e22;
         }
+        main {
+            margin-top: 40px;
+            text-align: center;
+        }
+        footer {
+            background-color: #deb96a;
+            color: white;
+            border-radius: 6px;
+            margin-top: 40px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        footer nav.menu {
+            position: static;
+            display: flex;
+            background: transparent;
+            justify-content: space-between;
+            box-shadow: none;
+            gap: 15px;
+        }
+
+        footer nav.menu div {
+            color: white;
+            font-weight: bold;
+        }
