@@ -1,6 +1,6 @@
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 0 auto;
             padding: 0;
             max-width: 1280px;
@@ -97,7 +97,6 @@
         .content {
             flex: 1;
             display: flex;
-            text-align: center;
             flex-direction: column;
         }
         main {
@@ -107,8 +106,18 @@
         
         .drag-and-drop {
             border: #083553 1px solid;
-            padding: 10px;
             margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .drag-and-drop h2 {
+            background-color: rgb(17, 125, 188);
+            color: white;
+            margin: 0;
+            padding: 8px 12px;
+            
+            
         }
 
         .sidebar {
@@ -169,4 +178,20 @@
 
        .hover-target {
             box-shadow: 0 0 10px rgba(74,144,226,0.6);
+        }
+        .box-items {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .item {
+            background-color: #5288b9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border-radius: 6px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
         }
