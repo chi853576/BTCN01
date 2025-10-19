@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // MENU
+// Menu 
   $("#menuFooter").html($("#menuHeader").html());
 
   function setActive(index) {
@@ -8,19 +8,23 @@ $(document).ready(function() {
     $("#menuFooter div").eq(index).addClass("active");
   }
 
-  $("#menuHeader, #menuFooter").on("click", "div", function(){
+  $("#menuHeader, #menuFooter").on("click", "div", function() {
     const index = $(this).index();
     setActive(index);
   });
 
-  // NEWS
+  // ===========================
+  //  NEWS COLLAPSE
+  // ===========================
   $('.news h2').click(function() {
     const parent = $(this).parent('.news');
     parent.toggleClass('open');
     parent.find('p').slideToggle(200);
   });
 
-  // DRAG and DROP NEWS
+  // ===========================
+  //  DRAG and DROP NEWS (sidebar)
+  // ===========================
   let dragging = null, ghost = null, isDragging = false;
   let offsetY = 0, offsetX = 0;
 
@@ -92,7 +96,7 @@ $(document).ready(function() {
     $('.news').removeClass('hover-target');
   });
 
-  // BOX ITEMS 
+  //  BOX ITEMS
   const initialItems = [
     { emoji: '🐁', name: 'Mouse' },
     { emoji: '🐃', name: 'Buffalo' },
@@ -118,40 +122,35 @@ $(document).ready(function() {
       </div>
     `);
   }
+
   initialItems.forEach(it => $grid.append(createItem(it)));
-  // add new item
+
   $('.add-button').click(function() {
     const $selected = $('.chosen-item option:selected');
     const emoji = $selected.val();
-    const name = $selected.attr('name');
+    const name = $selected.text(); 
     $grid.append(createItem({ emoji, name }));
   });
 
-  // DRAG and DROP BOX ITEMS
-$(function() {
-  let $dragging = null;
+  //  DRAG & DROP ITEMS 
+  let $draggingItem = null;
   let $placeholder = $('<div class="placeholder"></div>');
-  let startIndex = null;
-  let isDragging = false;
-  const $grid = $('.box-items');
+  let isDraggingItem = false;
 
   $grid.on('mousedown', '.item', function(e) {
     e.preventDefault();
-    $dragging = $(this);
-    startIndex = $dragging.index();
-    isDragging = true;
+    $draggingItem = $(this);
+    isDraggingItem = true;
 
     $placeholder = $('<div class="placeholder"></div>');
-    $dragging.after($placeholder);
-    $dragging.css({
+
+    $draggingItem.after($placeholder);
+    $draggingItem.css({
       position: 'absolute',
       zIndex: 1000,
       pointerEvents: 'none',
-      width: $dragging.outerWidth(),
+      width: $draggingItem.outerWidth(),
     });
   });
-
-  
-});
 
 });
