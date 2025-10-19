@@ -158,13 +158,14 @@
             background-color: rgb(232, 157, 58);
         }
         .drag-handle {
-            cursor: move;
+            position: absolute;
+            right: 8px;
+            top: 10px;
+            cursor: grab;
             font-size: 18px;
+            user-select: none;
         }
-        .news-placeholder {
-            border: 2px dashed #f5923b;
-            background-color: #fef3e7;
-            height: 80px;
-            margin-bottom: 10px;
-            border-radius: 6px;
+
+       .hover-target {
+            box-shadow: 0 0 10px rgba(74,144,226,0.6);
         }
