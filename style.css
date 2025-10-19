@@ -126,7 +126,7 @@
             overflow: hidden;
         }
         .news h2 {
-            background-color: #f5923b;
+            background-color: #f3c6a0;
             font-family: 'Times New Roman', Times, serif;
             text-align: center;
             color: white;
@@ -138,7 +138,7 @@
 
         }
         .news h2::before {
-            content: "►";
+            content: "⏵";
             position: absolute;
             left: 10px;
             top: 50%;
@@ -147,10 +147,13 @@
             transition: transform 0.3s ease;
         }
         .news.open h2::before {
-            content: "▼";  
+            content: "↓";  
         }
 
         .news p {
             display: none;
             color: #41b2ea;
+        }
+        .news.open h2{
+            background-color: rgb(232, 157, 58);
         }
