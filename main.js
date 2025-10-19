@@ -137,7 +137,7 @@ $(document).ready(function() {
     { emoji: '🐎', name: 'Horse' },
     { emoji: '🐐', name: 'Goat' },
     { emoji: '🐒', name: 'Monkey' },
-    { emoji: '🐔', name: 'Rooster' },
+    { emoji: '🐔', name: 'Chicken' },
     { emoji: '🐕', name: 'Dog' },
     { emoji: '🐖', name: 'Pig' }
   ];
@@ -151,14 +151,13 @@ $(document).ready(function() {
       </div>
     `);
   }
-
   initialItems.forEach(it => $grid.append(createItem(it)));
 
-
+  $('.add-button').click(function() {
+    const $selected = $('.chosen-item option:selected');
+    const emoji = $selected.val();
+    const name = $selected.attr('name') || ''; 
+    $grid.append(createItem({ emoji, name }));
+  });
 });
-});
-
-
-
-
-
+}); 
