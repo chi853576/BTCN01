@@ -3,12 +3,10 @@
             margin: 0 auto;
             padding: 0;
             max-width: 1280px;
+            box-sizing: border-box;
         }
 
         header {
-            background-color: rgba(10, 149, 214, 0.783);
-            border-radius: 8px;
-            padding-top: 10px;
             text-align: center;
             height: 66px;
             max-width: 1280px;
@@ -17,13 +15,16 @@
 
         header h1 {
             margin: 0;
+            background-color: rgba(10, 149, 214, 0.783);
+            border-radius: 5px;
+            height: 55px;
             color: rgb(174, 236, 247);
             text-shadow: 1px 1px 2px rgb(22, 21, 21);
         }
 
         nav.menu {
             position: absolute;
-            bottom: -15px;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #e9f1f9;
