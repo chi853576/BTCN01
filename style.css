@@ -112,6 +112,7 @@
             flex-direction: column;
         }
         .drag-header{
+            position: relative;
             display: flex;
             align-items: center;
             background-color: #14678d;
@@ -126,12 +127,16 @@
             display: flex;
             align-items: center;
             position: absolute;
-            left: 60%;
+            left: 50%;
             transform: translateX(-50%);
             gap: 8px;
         }
         .chosen-item {
             font-size: 1.5em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 4px 8px;
+            cursor: pointer;
         }
         .add-button {
             background-color: #085b87;
@@ -139,7 +144,12 @@
             border-radius: 20px;
             color: white;
             padding: 5px 12px;
-    }
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .add-button:hover {
+            background-color: #81b3cd;
+        }
 
         .sidebar {
             width: 256px; 
@@ -215,4 +225,7 @@
             align-items: center;
             justify-content: center;
             font-size: 50px;
+        }
+        .item:hover {
+            transform: scale(1.05);
         }
