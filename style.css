@@ -157,3 +157,14 @@
         .news.open h2{
             background-color: rgb(232, 157, 58);
         }
+        .drag-handle {
+            cursor: move;
+            font-size: 18px;
+        }
+        .news-placeholder {
+            border: 2px dashed #f5923b;
+            background-color: #fef3e7;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
