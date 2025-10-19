@@ -152,5 +152,24 @@ $(document).ready(function() {
       width: $draggingItem.outerWidth(),
     });
   });
+  $(document).on('mousemove', function(e) {
+    if (!isDraggingItem || !$draggingItem) return;
+
+    $draggingItem.css({
+      top: e.pageY - $draggingItem.outerHeight() / 2,
+      left: e.pageX - $draggingItem.outerWidth() / 2,
+    });
+
+    const elemBelow = document.elementFromPoint(e.clientX, e.clientY);
+    const $target = $(elemBelow).closest('.item');
+
+    if ($target.length && !$target.is($draggingItem)) {
+      if ($target.index() > $placeholder.index()) {
+        $target.after($placeholder);
+      } else {
+        $target.before($placeholder);
+      }
+    }
+  });
 
 });
