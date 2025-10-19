@@ -1,3 +1,4 @@
+
         body {
             font-family: Arial, sans-serif;
             margin: 0 auto;
@@ -50,16 +51,11 @@
             color: #e67e22;
         }
 
-        main {
-            margin-top: 40px;
-            text-align: center;
-        }
-
         footer {
             background-color: #deb96a;
             color: white;
+            height: 33px;
             border-radius: 6px;
-            margin-top: 40px;
             padding: 10px 20px;
             display: flex;
             justify-content: space-around;
@@ -93,17 +89,29 @@
 
         .container {
             display: flex;
-            justify-items: row;
-
-
+            gap: 10px;
+            padding: 10px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
         }
         main {
-           flex: 1;
+            border: #083553 1px solid;
+            flex: 1;
         }
+        
+        .drag-and-drop {
+            border: #083553 1px solid;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
         .sidebar {
             width: 256px; 
             background-color: #fff;
-            border-left: 2px solid #ccc;
         }   
         .news {
             background-color: #ffffff;
@@ -119,3 +127,4 @@
             margin: 0;
             border-radius: 6px 6px 0 0;
         }
+        
