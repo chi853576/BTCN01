@@ -52,7 +52,6 @@
     </div>
 
 
-
     <footer>
         <p>Copyright © Kimchi</p>
         <nav class="menu" id="menuFooter"></nav>
@@ -78,10 +77,17 @@
                 setActive(index);
             });
 
-            $("#btn1").click(function(){
-                $("#para1").css("color", "blue");
-            });
+            
         });
+
+        $(document).ready(function() {
+        $('.news h2').click(function() {
+            const parent = $(this).parent('.news');
+            parent.toggleClass('open');           
+            parent.find('p').slideToggle(200);
+        });
+        });
+
     </script>
 </body>
 </html>
