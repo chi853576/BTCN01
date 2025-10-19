@@ -6,6 +6,7 @@
     <title>Bài tập 1 - 22120034</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 
 </head>
 <body>
@@ -22,19 +23,19 @@
     <div class="container">
         <aside class="sidebar">
             <div class="news">
-                <h2>New1<span class="drag-handle">⠿</span></h2>
+                <h2>New1<span class="drag-handle">↕</span></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="news">
-                <h2>New2<span class="drag-handle">⠿</span></h2>
+                <h2>New2<span class="drag-handle">↕</span></h2>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class="news">
-                <h2>New3<span class="drag-handle">⠿</span></h2>
+                <h2>New3<span class="drag-handle">↕</span></h2>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
             <div class="news">
-                <h2>New4<span class="drag-handle">⠿</span></h2>
+                <h2>New4<span class="drag-handle">↕</span></h2>
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </aside>
@@ -57,83 +58,6 @@
         <nav class="menu" id="menuFooter"></nav>
     </footer>
 
-    <script>
-        $(document).ready(function(){
-            $("#menuFooter").html($("#menuHeader").html());
 
-            function setActive(index) {
-                $("#menuHeader div, #menuFooter div").removeClass("active");
-                $("#menuHeader div").eq(index).addClass("active");
-                $("#menuFooter div").eq(index).addClass("active");
-            }
-
-            $("#menuHeader").on("click", "div", function(){
-                const index = $(this).index();
-                setActive(index);
-            });
-
-            $("#menuFooter").on("click", "div", function(){
-                const index = $(this).index();
-                setActive(index);
-            });
-
-            
-        });
-
-        $(document).ready(function() {
-        $('.news h2').click(function() {
-            const parent = $(this).parent('.news');
-            parent.toggleClass('open');           
-            parent.find('p').slideToggle(200);
-        });
-        });
-        $(function() {
-            let dragging = null;
-            let ghost = null;
-            let isDragging = false;
-            let offsetY = 0, offsetX = 0;
-
-            $('.drag-handle').on('mousedown', function(e) {
-                e.preventDefault();
-                dragging = $(this).closest('.news');
-                const offset = dragging.offset();
-                offsetY = e.clientY - offset.top;
-                offsetX = e.clientX - offset.left;
-                ghost = dragging.clone()
-                .addClass('ghost')
-                .css({
-                    position: 'absolute',
-                    top: offset.top,
-                    left: offset.left,
-                    width: dragging.outerWidth(),
-                    opacity: 0.7,
-                    pointerEvents: 'none',
-                    transform: 'scale(1.02)',
-                    boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
-                    zIndex: 1000
-                })
-                .appendTo('body');
-
-                isDragging = true;
-            });
-
-            $(document).on('mousemove', function(e) {
-                if (!isDragging || !ghost) return;
-
-                ghost.css({
-                top: e.clientY - offsetY,
-                left: e.clientX - offsetX
-                });
-
-                const elemBelow = document.elementFromPoint(e.clientX, e.clientY);
-                const $target = $(elemBelow).closest('.news');
-
-                $('.news').removeClass('hover-target');
-                if ($target.length && !$target.is(dragging)) {
-                $target.addClass('hover-target');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
