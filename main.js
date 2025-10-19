@@ -99,3 +99,66 @@ $(document).ready(function() {
             $('.news').removeClass('hover-target');
             });
         });
+
+$(document).ready(function() {
+  const initialItems = [
+    { emoji: '🐁', name: 'Mouse' },
+    { emoji: '🐃', name: 'Buffalo' },
+    { emoji: '🐯', name: 'Tiger' },
+    { emoji: '🐈', name: 'Cat' },
+    { emoji: '🐉', name: 'Dragon' },
+    { emoji: '🐍', name: 'Snake' },
+    { emoji: '🐎', name: 'Horse' },
+    { emoji: '🐐', name: 'Goat' },
+    { emoji: '🐒', name: 'Monkey' },
+    { emoji: '🐔', name: 'Rooster' },
+    { emoji: '🐕', name: 'Dog' },
+    { emoji: '🐖', name: 'Pig' }
+  ];
+  const $grid = $('.box-items');
+
+  function createItem(item) {
+    return $(`
+      <div class="item">
+        <div class="emoji-box">${item.emoji}</div>
+        <div class="name">${item.name}</div>
+      </div>
+    `);
+  }
+
+$(document).ready(function() {
+  const initialItems = [
+    { emoji: '🐁', name: 'Mouse' },
+    { emoji: '🐃', name: 'Buffalo' },
+    { emoji: '🐯', name: 'Tiger' },
+    { emoji: '🐈', name: 'Cat' },
+    { emoji: '🐉', name: 'Dragon' },
+    { emoji: '🐍', name: 'Snake' },
+    { emoji: '🐎', name: 'Horse' },
+    { emoji: '🐐', name: 'Goat' },
+    { emoji: '🐒', name: 'Monkey' },
+    { emoji: '🐔', name: 'Rooster' },
+    { emoji: '🐕', name: 'Dog' },
+    { emoji: '🐖', name: 'Pig' }
+  ];
+  const $grid = $('.box-items');
+
+  function createItem(item) {
+    return $(`
+      <div class="item">
+        <div class="emoji-box">${item.emoji}</div>
+        <div class="name">${item.name}</div>
+      </div>
+    `);
+  }
+
+  initialItems.forEach(it => $grid.append(createItem(it)));
+
+
+});
+});
+
+
+
+
+
