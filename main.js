@@ -253,6 +253,13 @@ $('.button:contains("Delete")').on('click', function() {
   const pattern = $('.input-text').val().trim();
   if (!pattern) return;
 
+  let regex;
+  try {
+    regex = new RegExp(pattern, 'gi');
+  } catch (err) {
+    alert('Pattern không hợp lệ!');
+    return;
+  }
 
   const currentText = $output.text(); 
   const deleted = currentText.replace(regex, '');
