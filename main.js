@@ -180,7 +180,7 @@ $(document).ready(function() {
     $draggingItem = null;
     isDraggingItem = false;
   });
-
+// process text layout settings
   $('#toggleFormat').on('click', function() {
     $(this).closest('.settings').find('.format-settings').slideToggle(200);
   });
@@ -189,7 +189,13 @@ $(document).ready(function() {
     const color = $(this).val();
     $('.color-sample').css('background-color', color);
   });
+// sample text highlight
+function highlightSampletext() {
+  const isBold = $('#ckb-bold').is(':checked');
+  const isItalic = $('#ckb-italic').is(':checked');
+  const isUnderline = $('#ckb-underline').is(':checked');
+  const bgColor = $('#bg-color').val();
 
+}
 
-  
 });
