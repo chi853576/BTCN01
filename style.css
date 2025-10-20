@@ -288,8 +288,8 @@ button {
 .format-settings {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 10%;
+    top: calc(100% + 20px);
+    left: 30%;
     background: #b6d4f1;
     border-radius: 5px;
     min-width: 150px;
@@ -303,4 +303,17 @@ button {
   margin-bottom: 6px;
   gap: 5px;
 }
-
+.sample-text {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+.color-sample {
+    width: 35px;
+    height: 20px;
+    border: 3px solid #fefefe;
+    background-color: #d8e429;
+}
+.output-area {
+    padding: 10px;
+}

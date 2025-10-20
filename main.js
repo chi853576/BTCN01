@@ -185,4 +185,11 @@ $(document).ready(function() {
     $(this).closest('.settings').find('.format-settings').slideToggle(200);
   });
 
+  $('#bg-color').on('input', function() {
+    const color = $(this).val();
+    $('.color-sample').css('background-color', color);
+  });
+
+
+  
 });
