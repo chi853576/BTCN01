@@ -239,8 +239,6 @@ function resetHighlight() {
   $output.html(highlighted);
 }
 
-
-
 $('.button:contains("Highlight")').on('click', function() {
   const pattern = $('.input-text').val();
   if(!pattern) return;
@@ -250,5 +248,19 @@ $('.button:contains("Highlight")').on('click', function() {
 });
 
 $('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color, #text-color').on('change input', resetHighlight);
+
+$('.button:contains("Delete")').on('click', function() {
+  const pattern = $('.input-text').val().trim();
+  if (!pattern) return;
+
+
+  const currentText = $output.text(); 
+  const deleted = currentText.replace(regex, '');
+  $output.text(deleted);
+
+  originalhtml = deleted;
+});
+
+
 
 });
