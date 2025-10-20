@@ -41,8 +41,30 @@
         </aside>
         <div class="content">
             <main>
-                <h2>Main content</h2>
-                <p>This is the main content area.</p>
+                <div class="header-main">
+                    <h2>Process text</h2>
+                    <div class="input-area">
+                        <textarea class="input-text" placeholder="Enter your text here..."></textarea>
+                        <button class="highlight-button">Highlight</button>
+                        <button class="delete-button">Delete</button>
+                        <button class="reset-button">Reset</button>
+                    </div>
+                    <div class="settings">
+                        <div class="sample-text">
+                            <span class="result-settings">Sample text</span>
+                        </div>
+                        <div class="format-settings">
+                            <label for="ckb-bold">Bold</label>
+                            <input type="checkbox" id="ckb-bold">
+                            <label for="ckb-italic">Italic</label>
+                            <input type="checkbox" id="ckb-italic">
+                            <label for="ckb-underline">Underline</label>
+                            <input type="checkbox" id="ckb-underline">
+                            <label for="bg-color">Background</label>
+                            <input type="color" id="bg-color" value="#ffffff">
+                        </div>
+                    </div>
+                </div>
             </main>
             <div class="drag-and-drop">
                 <div class="drag-header">
