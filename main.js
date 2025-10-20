@@ -181,4 +181,8 @@ $(document).ready(function() {
     isDraggingItem = false;
   });
 
+  $('#toggleFormat').on('click', function() {
+    $(this).closest('.settings').find('.format-settings').slideToggle(200);
+  });
+
 });

@@ -272,9 +272,11 @@
 .settings {
     display: flex;
     align-items: center;
+    gap: 30px;
+    position: relative;
 }
 .result-settings {
-    border: 1px solid #ffffff;
+    border: 1px solid #efefed;
 }
 button {
     background-color: #0a4d7a;
@@ -283,3 +285,22 @@ button {
     color: white;
     padding: 5px 12px;
 }
+.format-settings {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    background: #b6d4f1;
+    border-radius: 5px;
+    min-width: 150px;
+    color: #085b87;
+    z-index: 100;
+
+}
+.format-settings div{
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  gap: 5px;
+}
+
