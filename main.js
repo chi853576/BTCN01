@@ -210,6 +210,7 @@ $('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color, #text-color').on('change i
 
 const $output = $('.output-area p');
 let originalhtml = $output.html();
+let resethtml = $output.html();
 let currentPattern = "";
 
 function resetHighlight() {
@@ -272,8 +273,7 @@ $('.button:contains("Delete")').on('click', function() {
 // reset text
 $('.button:contains("Reset")').on('click', function() {
   currentPattern = "";
-  originalhtml = $output.text();
-  $output.html(originalhtml);
+  $output.html(resethtml);
 });
 
 
