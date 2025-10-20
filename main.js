@@ -207,33 +207,48 @@ function highlightSampletext() {
 $('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color, #text-color').on('change input', highlightSampletext);
 
 // Highlight text
-$('.button:contains("Highlight")').on('click', function() {
-  const pattern = $('.input-text').val();
-  if(!pattern) return;
+
+const $output = $('.output-area p');
+let originalhtml = $output.html();
+let currentPattern = "";
+
+function resetHighlight() {
+  if(!currentPattern) return;
   const isBold = $('#ckb-bold').is(':checked');
   const isItalic = $('#ckb-italic').is(':checked');
   const isUnderline = $('#ckb-underline').is(':checked');
   const bgColor = $('#bg-color').val();
   const textcolor = $('#text-color').val();
-  const $output = $('.output-area');
-
-
+  
   let highlightstyle = "";
   if(isBold) highlightstyle += "font-weight:bold;";
   if(isItalic) highlightstyle += "font-style:italic;";
   if(isUnderline) highlightstyle += "text-decoration:underline;";
   if(textcolor) highlightstyle += `color:${textcolor};`;
   if(bgColor) highlightstyle += `background-color:${bgColor};`;
+
   let regex;
   try {
-    regex = new RegExp(`(${pattern})`, 'gi');
+    regex = new RegExp(`(${currentPattern})`, 'gi');
   } catch (err) {
     alert('Pattern không hợp lệ!');
     return;
   }
-  const original = $output.text();
-  const highlighted = original.replace(regex, `<span style="${highlightstyle}">$1</span>`);
+
+  const highlighted = originalhtml.replace(regex, `<span style="${highlightstyle}">$1</span>`);
   $output.html(highlighted);
+}
+
+
+
+$('.button:contains("Highlight")').on('click', function() {
+  const pattern = $('.input-text').val();
+  if(!pattern) return;
+  currentPattern = pattern;
+  originalhtml = $output.text();
+  resetHighlight();
 });
+
+$('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color, #text-color').on('change input', resetHighlight);
 
 });
