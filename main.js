@@ -210,10 +210,16 @@ function highlightSampletext() {
 $('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color').on('change input', highlightSampletext);
 
 // Highlight text
-button:contains('Highlight').on('click', function() {
+$('.button:contains("Highlight")').on('click', function() {
   const pattern = $('.input-text').val();
   if(!pattern) return;
+  const isBold = $('#ckb-bold').is(':checked');
+  const isItalic = $('#ckb-italic').is(':checked');
+  const isUnderline = $('#ckb-underline').is(':checked');
+  const bgColor = $('#bg-color').val();
   const textcolor = $('#text-color').val();
+  const $output = $('.output-area');
+
 
   let highlightstyle = "";
   if(isBold) highlightstyle += "font-weight:bold;";
@@ -222,7 +228,11 @@ button:contains('Highlight').on('click', function() {
   if(textcolor) highlightstyle += `color:${textcolor};`;
   if(bgColor) highlightstyle += `background-color:${bgColor};`;
 
-  const highlighted = `<span style="${highlightstyle}">${pattern}</span>`;
+  const safePattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`(${safePattern})`, 'gi');
+  
+  const original = $output.text();
+  const highlighted = original.replace(regex, `<span style="${highlightstyle}">$1</span>`);
   $output.html(highlighted);
 });
 
