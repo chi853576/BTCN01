@@ -256,3 +256,30 @@
   border: 2px solid #c5c1ba;
   border-radius: 6px;
 }
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #1a68b5;
+    color: white;
+}
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.settings {
+    display: flex;
+    align-items: center;
+}
+.result-settings {
+    border: 1px solid #ffffff;
+}
+button {
+    background-color: #0a4d7a;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 12px;
+}
