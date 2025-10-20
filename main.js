@@ -13,18 +13,18 @@ $(document).ready(function() {
     setActive(index);
   });
 
-  // ===========================
-  //  NEWS COLLAPSE
-  // ===========================
-  $('.news h2').click(function() {
-    const parent = $(this).parent('.news');
+  //  open/close NEWS
+
+  $('.news h2 .icon').click(function(e) {
+    e.stopPropagation(); // prevent triggering h2 click event
+    const parent = $(this).closest('.news');
     parent.toggleClass('open');
     parent.find('p').slideToggle(200);
+    const icon = $(this);
+    icon.text(parent.hasClass('open') ? '↓' : '⏵');
   });
 
-  // ===========================
-  //  DRAG and DROP NEWS (sidebar)
-  // ===========================
+  //  DRAG and DROP NEWS 
   let dragging = null, ghost = null, isDragging = false;
   let offsetY = 0, offsetX = 0;
 

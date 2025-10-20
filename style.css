@@ -176,22 +176,17 @@
             padding: 10px;
             margin: 0;
             border-radius: 6px 6px 0 0;
-            cursor: pointer;
-            position: relative;
+            position: relative; 
 
         }
-        .news h2::before {
-            content: "⏵";
+        .icon {
+            cursor: pointer;
             position: absolute;
             left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
+            margin-right: 8px;
             font-size: 14px;
-            transition: transform 0.3s ease;
         }
-        .news.open h2::before {
-            content: "↓";  
-        }
+
 
         .news p {
             display: none;
