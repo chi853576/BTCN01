@@ -21,7 +21,7 @@
             border-radius: 5px;
             height: 55px;
             color: rgb(174, 236, 247);
-            text-shadow: 1px 1px 2px rgb(22, 21, 21);
+            -webkit-text-stroke: 1px black;
         }
 
         nav.menu {
@@ -32,7 +32,7 @@
             background-color: #e9f1f9;
             border-radius: 6px;
             display: flex;
-            gap: 15px;
+            gap: 60px;
             padding: 6px 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
