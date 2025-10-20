@@ -171,5 +171,14 @@ $(document).ready(function() {
       }
     }
   });
+  $(document).on('mouseup', function() {
+    if (!isDraggingItem || !$draggingItem) return;
+
+    $draggingItem.removeAttr('style');
+    $placeholder.replaceWith($draggingItem);
+
+    $draggingItem = null;
+    isDraggingItem = false;
+  });
 
 });
