@@ -95,22 +95,7 @@ $(document).ready(function() {
     $('.news').removeClass('hover-target');
   });
 
-  //  BOX ITEMS
-  const initialItems = [
-    { emoji: '🐁', name: 'Mouse' },
-    { emoji: '🐃', name: 'Buffalo' },
-    { emoji: '🐯', name: 'Tiger' },
-    { emoji: '🐈', name: 'Cat' },
-    { emoji: '🐉', name: 'Dragon' },
-    { emoji: '🐍', name: 'Snake' },
-    { emoji: '🐎', name: 'Horse' },
-    { emoji: '🐐', name: 'Goat' },
-    { emoji: '🐒', name: 'Monkey' },
-    { emoji: '🐔', name: 'Rooster' },
-    { emoji: '🐕', name: 'Dog' },
-    { emoji: '🐖', name: 'Pig' }
-  ];
-
+  //  insert ITEMS
   const $grid = $('.box-items');
 
   function createItem(item) {
@@ -121,13 +106,11 @@ $(document).ready(function() {
       </div>
     `);
   }
-
-  initialItems.forEach(it => $grid.append(createItem(it)));
-
+  
   $('.add-button').click(function() {
     const $selected = $('.chosen-item option:selected');
     const emoji = $selected.val();
-    const name = $selected.text(); 
+    const name = $selected.attr('name');
     $grid.append(createItem({ emoji, name }));
   });
 

@@ -316,3 +316,6 @@ button {
 .output-area {
     padding: 10px;
 }
+.output-area p {
+    font-size: 20px;
+}
