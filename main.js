@@ -180,7 +180,7 @@ $(document).ready(function() {
     $draggingItem = null;
     isDraggingItem = false;
   });
-  
+
 // process text layout settings
   $('#toggleFormat').on('click', function() {
     $(this).closest('.settings').find('.format-settings').slideToggle(200);
@@ -209,5 +209,21 @@ function highlightSampletext() {
 }
 $('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color').on('change input', highlightSampletext);
 
+// Highlight text
+button:contains('Highlight').on('click', function() {
+  const pattern = $('.input-text').val();
+  if(!pattern) return;
+  const textcolor = $('#text-color').val();
+
+  let highlightstyle = "";
+  if(isBold) highlightstyle += "font-weight:bold;";
+  if(isItalic) highlightstyle += "font-style:italic;";
+  if(isUnderline) highlightstyle += "text-decoration:underline;";
+  if(textcolor) highlightstyle += `color:${textcolor};`;
+  if(bgColor) highlightstyle += `background-color:${bgColor};`;
+
+  const highlighted = `<span style="${highlightstyle}">${pattern}</span>`;
+  $output.html(highlighted);
+});
 
 });
