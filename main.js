@@ -14,7 +14,6 @@ $(document).ready(function() {
   });
 
   //  open/close NEWS
-
   $('.news h2 .icon').click(function(e) {
     e.stopPropagation(); // prevent triggering h2 click event
     const parent = $(this).closest('.news');

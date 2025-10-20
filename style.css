@@ -190,7 +190,9 @@
 
         .news p {
             display: none;
-            color: #41b2ea;
+            color: #2780ac;
+            padding: 10px;
+            margin: 0;
         }
         .news.open h2{
             background-color: rgb(232, 157, 58);
