@@ -196,6 +196,15 @@ function highlightSampletext() {
   const isUnderline = $('#ckb-underline').is(':checked');
   const bgColor = $('#bg-color').val();
 
+  $('.result-settings').css({
+    'font-weight': isBold ? 'bold' : 'normal',
+    'font-style': isItalic ? 'italic' : 'normal',
+    'text-decoration': isUnderline ? 'underline' : 'none',
+    'background-color': bgColor
+  });
+  $('.color-sample').css('background-color', bgColor);
 }
+$('#ckb-bold, #ckb-italic, #ckb-underline, #bg-color').on('change input', highlightSampletext);
+
 
 });
