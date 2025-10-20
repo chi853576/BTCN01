@@ -180,15 +180,18 @@ $(document).ready(function() {
     $draggingItem = null;
     isDraggingItem = false;
   });
+  
 // process text layout settings
   $('#toggleFormat').on('click', function() {
     $(this).closest('.settings').find('.format-settings').slideToggle(200);
   });
 
-  $('#bg-color').on('input', function() {
-    const color = $(this).val();
-    $('.color-sample').css('background-color', color);
+//color text sample 
+  $('#text-color').on('input', function() {
+    const colortext = $(this).val();
+    $('.result-settings').css('color', colortext );
   });
+
 // sample text highlight
 function highlightSampletext() {
   const isBold = $('#ckb-bold').is(':checked');
