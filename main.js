@@ -162,7 +162,7 @@ $(document).ready(function() {
     $draggingItem = null;
     isDraggingItem = false;
   });
-
+  
 // process text layout settings
   $('#toggleFormat').on('click', function() {
     $(this).closest('.settings').find('.format-settings').slideToggle(200);

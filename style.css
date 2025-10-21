@@ -5,6 +5,7 @@
             padding: 0;
             max-width: 1280px;
             box-sizing: border-box;
+
             
         }
 
@@ -14,6 +15,7 @@
             max-width: 1280px;
             position: relative;
         }
+
 
         header h1 {
             margin: 0;
@@ -74,7 +76,7 @@
             background: transparent;
             justify-content: space-between;
             box-shadow: none;
-            gap: 15px;
+            gap: 15px;            
         }
 
         footer nav.menu div {
@@ -88,21 +90,26 @@
             text-decoration: underline;
         }
 
+
         .container {
             display: flex;
             gap: 10px;
             padding: 10px;
             min-height: calc(100vh - 60px);
+
         }
         .content {
             flex: 1;
             display: flex;
             flex-direction: column;
+
         }
         main {
             border: #083553 1px solid;
             flex: 1;
-            min-height: 300px;
+            min-height: 400px;
+            border-radius: 5px;
+
         }
         
         .drag-and-drop {
@@ -111,6 +118,7 @@
             display: flex;
             flex: 1;
             flex-direction: column;
+            border-radius: 5px;
            
         }
         .drag-header{
@@ -318,4 +326,5 @@ button {
 }
 .output-area p {
     font-size: 20px;
+
 }
